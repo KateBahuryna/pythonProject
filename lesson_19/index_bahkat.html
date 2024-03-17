@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Главная страница | Сотрудники</title>
+    <link rel="stylesheet" href="/static/css/my.css">
+  </head>
+  <body class="my-class">
+    {% set top_emplyee = employees[0] %}
+    <div>
+        <h1 >О сайте "Сотрудники"</h1>
+        <table>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Department</th>
+          </tr>
+          {% for employee in employees %}
+          <tr>    
+            <td>{{ employee["id"] }}</td>
+            <td>{{ employee["name"] }}</td>
+            <td>{{ employee["department"] }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+        <p>{{top_emplyee['name']}} лучший!</p>
+        <p>{{employees[1]['name']}} тоже лучший!</p>
+    </div>
+  </body>
+</html>
